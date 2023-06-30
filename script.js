@@ -4,21 +4,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const nextButton = document.getElementById('next');
     const prevButton = document.getElementById('prev');
 
-    images.forEach((img, index) => {
-        if (index !== currentImageIndex) {
-            img.style.display = 'none';
-        }
-    });
+    images[currentImageIndex].classList.add('active');
 
     nextButton.addEventListener('click', () => {
-        images[currentImageIndex].style.display = 'none';
+        images[currentImageIndex].classList.remove('active');
         currentImageIndex = (currentImageIndex + 1) % images.length;
-        images[currentImageIndex].style.display = 'block';
+        images[currentImageIndex].classList.add('active');
     });
 
     prevButton.addEventListener('click', () => {
-        images[currentImageIndex].style.display = 'none';
+        images[currentImageIndex].classList.remove('active');
         currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-        images[currentImageIndex].style.display = 'block';
+        images[currentImageIndex].classList.add('active');
     });
 });
