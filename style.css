@@ -126,7 +126,7 @@
   
   .about-us .content p {
     box-sizing: border-box;
-    padding: 20px;
+    padding: 40px;
     border-radius: 5px;
     box-shadow: 0 0 10pxvar(--shadow-color);
     text-align: justify;
