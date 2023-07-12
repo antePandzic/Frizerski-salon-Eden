@@ -8,7 +8,7 @@
   
   body {
     font-family: 'Poppins', sans-serif;
-    background: url('https://www.toptal.com/designers/subtlepatterns/uploads/pipes.png');
+    background: url("images/mochaGrunge.png");
     color: var(--primary-color);
     text-align: center;
     padding: 50px 0;
@@ -46,6 +46,7 @@
     opacity: 0;
     transition: opacity 1s ease-in-out;
     object-fit: cover;
+    border-radius: 3px;
   }
   
   .slider-image.active {
@@ -59,7 +60,8 @@
   }
   
   button {
-    background-color: var(--secondary-color);
+    background-color: #fd8515;
+    border-radius: 3px;
     color: var(--primary-color);
     border: 2px solid var(--primary-color);
     padding: 15px 30px;
@@ -125,11 +127,18 @@
     border-radius: 5px;
     box-shadow: 0 0 10px var(--shadow-color);
     text-align: justify;
-    background-color: var(--secondary-color);
+    background-color: #fd8515;
     color: var(--primary-color);
-  }
-  
-  .about-us .content p:before {
+    max-width: 300px; /* Limit the width of the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for hover effect */
+}
+
+.about-us .content p:hover {
+    transform: translateY(-10px); /* Lift the card a bit on hover */
+    box-shadow: 0 10px 20px var(--shadow-color); /* Increase shadow on hover */
+}
+
+.about-us .content p:before {
     content: '';
     position: absolute;
     top: 0;
@@ -138,17 +147,8 @@
     width: 20px;
     background-color: var(--primary-color);
     border-radius: 5px 0 0 5px;
-  }
-  
-  .about-us .content p:nth-child(even) {
-    text-align: left;
-  }
-  
-  .about-us .content p:nth-child(even):before {
-    left: auto;
-    right: -20px;
-    border-radius: 0 5px 5px 0;
-  }
+}
+
   
   .logo {
     width: 200px;
@@ -165,29 +165,4 @@
     margin-bottom: 50px;
     font-weight: 700;
     font-family: 'Great Vibes', cursive;
-  }
-  
-  .p1 {
-    background-color: #f9f9f9;
-    color: var(--primary-color);
-  }
-  
-  .p2 {
-    background-color: #e8e8e8;
-    color: var(--primary-color);
-  }
-  
-  .p3 {
-    background-color: #d7d7d7;
-    color: var(--primary-color);
-  }
-  
-  .p4 {
-    background-color: #c6c6c6;
-    color: var(--primary-color);
-  }
-  
-  .p5 {
-    background-color: #b5b5b5;
-    color: var(--secondary-color);
   }
