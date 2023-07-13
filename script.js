@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('DOMContentLoaded', () => {
     let currentImageIndex = 0;
     const images = document.querySelectorAll('.slider-image');
     const nextImageButton = document.getElementById('next-image');
@@ -29,4 +29,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
       currentCardIndex = (currentCardIndex + 1) % cards.length;
       cards[currentCardIndex].classList.add('active');
     });
-});
+    
+    const menuContainer = document.querySelector('.menu-container');
+    const contactInfo = document.getElementById('contact-info');
+  
+    menuContainer.addEventListener('click', () => {
+      menuContainer.classList.toggle('open');
+    });
+  });
+  
