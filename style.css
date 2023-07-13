@@ -1,168 +1,173 @@
 :root {
-    --primary-color: #333;
-    --secondary-color: #fff;
-    --accent-color: #ffd700; /* Gold accent color */
-    --background-color: #f0f0f0;
-    --shadow-color: rgba(0, 0, 0, 0.1);
-  }
-  
-  body {
-    font-family: 'Poppins', sans-serif;
-    background: url("images/mochaGrunge.png");
-    color: var(--primary-color);
-    text-align: center;
-    padding: 50px 0;
-    line-height: 1.6;
-  }
-  
-  header {
-    padding: 10px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .title {
-    font-size: 3em;
-    margin-bottom: 50px;
-    font-weight: 700;
-  }
-  
-  .image-slider {
-    width: 80%;
-    margin: auto;
-    height: 500px;
-    box-shadow: 0px 10px 30px -5px var(--shadow-color);
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .slider-image {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    object-fit: cover;
-    border-radius: 3px;
-  }
-  
-  .slider-image.active {
-    opacity: 1;
-  }
-  
-  .button-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-  }
-  
-  button {
-    background-color: #fd8515;
-    border-radius: 3px;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-    padding: 15px 30px;
-    margin: 0 10px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-  }
-  
-  .contact-info {
-    margin-top: 50px;
-    padding: 50px;
-    background-color: var(--background-color);
-    box-shadow: 0px 10px 30px -5px var(--shadow-color);
-  }
-  
-  .contact-info h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .contact-info table {
-    width: 50%;
-    margin: auto;
-    border-collapse: collapse;
-  }
-  
-  .contact-info th,
-  .contact-info td {
-    padding: 15px;
-    text-align: left;
-    border: 1px solid var(--primary-color);
-  }
-  
-  .contact-info th {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    border-bottom: 1px solid var(--secondary-color);
-  }
-  
-  .about-us {
-    text-align: center;
-    margin-bottom: 50px;
-  }
-  
-  .about-us .o-nama {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: var(--primary-color);
-  }
-  
-  .about-us .content p {
-    position: relative;
-    box-sizing: border-box;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px var(--shadow-color);
-    text-align: justify;
-    background-color: #fd8515;
-    color: var(--primary-color);
-    max-width: 300px; /* Limit the width of the card */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for hover effect */
+  --background-color: #f0f0f0;
+  --primary-color: #333;
+  --secondary-color: #fff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --text-box-color: #f0f0f0;
 }
 
-.about-us .content p:hover {
-    transform: translateY(-10px); /* Lift the card a bit on hover */
-    box-shadow: 0 10px 20px var(--shadow-color); /* Increase shadow on hover */
+body {
+  background: url("images/mochaGrunge.png");
+  color: var(--primary-color);
+  font-family: 'Merriweather', sans-serif;
+  line-height: 1.6;
+  padding: 50px 0;
+  text-align: center;
 }
 
-.about-us .content p:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -20px;
-    width: 20px;
-    background-color: var(--primary-color);
-    border-radius: 5px 0 0 5px;
+header {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
 }
 
-  
-  .logo {
-    width: 200px;
-    height: auto;
-    margin-right: 20px;
-  }
-  
-  .logo-container {
-    text-align: center;
-  }
-  
-  .title {
-    font-size: 5em;
-    margin-bottom: 50px;
-    font-weight: 700;
-    font-family: 'Great Vibes', cursive;
-  }
+.title {
+  font-size: 3em;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.image-slider {
+  box-shadow: 0px 10px 30px -5px var(--shadow-color);
+  height: 500px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 80%;
+}
+
+.slider-image {
+  border-radius: 3px;
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transition: opacity 1s ease-in-out;
+  width: 100%;
+}
+
+.slider-image.active {
+  opacity: 1;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+button {
+  background-color: var(--text-box-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 3px;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: 1em;
+  margin: 0 10px;
+  padding: 15px 30px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.contact-info {
+  background-color: var(--background-color);
+  box-shadow: 0px 10px 30px -5px var(--shadow-color);
+  margin-top: 50px;
+  padding: 50px;
+}
+
+.contact-info h2, .about-us .o-nama {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contact-info table {
+  border-collapse: collapse;
+  margin: auto;
+  width: 50%;
+}
+
+.contact-info th, .contact-info td {
+  border: 1px solid var(--primary-color);
+  padding: 15px;
+  text-align: left;
+}
+
+.contact-info th {
+  background-color: var(--primary-color);
+  border-bottom: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+
+.logo {
+  height: auto;
+  margin-right: 20px;
+  width: 200px;
+}
+
+.logo-container {
+  text-align: center;
+}
+
+.title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 5em;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.card {
+  background-color: var(--text-box-color);
+  border-radius: 5px 0 0 5px;
+  box-shadow: 0 0 10px var(--shadow-color);
+  box-sizing: border-box;
+  color: var(--primary-color);
+  font-size: 2em;
+  margin: 20px auto;
+  max-width: 80%;
+  padding: 20px;
+  position: relative;
+  text-align: justify;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  width: 70%;
+  height: auto;
+  padding: 20px;
+  display: none;
+}
+
+.card:hover {
+  box-shadow: 0 10px 20px var(--shadow-color);
+  transform: translateY(-10px);
+}
+
+.card:before {
+  background-color: var(--primary-color);
+  border-radius: 5px 0 0 5px;
+  bottom: 0;
+  content: '';
+  left: 0px;
+  position: absolute;
+  top: 0;
+  width: 20px;
+}
+
+.card.active {
+  display: block;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
