@@ -13,6 +13,9 @@ body {
   line-height: 1.6;
   padding: 50px 0;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header {
@@ -23,9 +26,18 @@ header {
 }
 
 .title {
+  font-family: 'Great Vibes', cursive;
   font-size: 3em;
   font-weight: 700;
   margin-bottom: 50px;
+  position: relative; 
+  z-index: 2; 
+}
+
+.logo {
+  height: auto;
+  margin-right: 20px;
+  width: 200px;
 }
 
 .image-slider {
@@ -43,7 +55,7 @@ header {
   left: 0;
   object-fit: cover;
   opacity: 0;
-  position: absolute;
+  position: relative;
   top: 0;
   transition: opacity 1s ease-in-out;
   width: 100%;
@@ -76,41 +88,40 @@ button:hover {
   color: var(--secondary-color);
 }
 
-.kontakt {
-  font-size: 2em;
+.contact-container{
+  width: 80%;
 }
-
 .contact-info {
-  display: none;
-  background-color: var(--background-color);
-  box-shadow: 0px 10px 30px -5px var(--shadow-color);
   margin-top: 50px;
   padding: 50px;
-  width: 70%;
-  margin: auto;
+  background-color: var(--background-color);
+  box-shadow: 0px 10px 30px -5px var(--shadow-color);
 }
 
-.contact-info.active {
-  display: block;
-}
-
-.logo {
-  height: auto;
-  margin-right: 20px;
-  width: 200px;
-}
-
-.logo-container {
+.contact-info h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
   text-align: center;
 }
 
-.title {
-  font-family: 'Great Vibes', cursive;
-  font-size: 5em;
-  font-weight: 700;
-  margin-bottom: 50px;
+.contact-info table {
+  width: 95%;
+  margin: auto;
+  border-collapse: collapse;
 }
 
+.contact-info th,
+.contact-info td {
+  padding: 15px;
+  text-align: left;
+  border: 1px solid var(--primary-color);
+}
+
+.contact-info th {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-bottom: 1px solid var(--secondary-color);
+}
 .card {
   background-color: var(--text-box-color);
   border-radius: 5px;
@@ -121,7 +132,7 @@ button:hover {
   margin: 20px auto;
   max-width: 80%;
   position: relative;
-  text-align: justify;
+  text-align: center;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
   width: 70%;
   height: auto;
@@ -153,19 +164,87 @@ button:hover {
   gap: 20px;
 }
 
-.menu-container {
-  position: fixed;
-  top: 20px;
-  right: -100px; /* Adjust the initial position to be outside the viewport */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 20px;
+label .menu {
+  position: absolute;
+  right: -100px;
+  top: -100px;
+  z-index: 100;
+  width: 200px;
+  height: 200px;
+  background: #FFF;
+  border-radius: 50% 50% 50% 50%;
+  transition: .2s ease-in-out;
+  box-shadow: 0 0 0 0 #FFF, 0 0 0 0 #FFF;
   cursor: pointer;
-  z-index: 9999;
-  transition: right 0.3s ease; /* Add transition for smooth animation */
 }
 
-.menu-container.open {
-  right: 20px; /* Slide the menu 100px to the left when open */
+label .hamburger {
+  position: absolute;
+  top: 135px;
+  left: 50px;
+  width: 30px;
+  height: 2px;
+  background: #69D2e7;
+  display: block;
+  transform-origin: center;
+  transition: .2s ease-in-out;
+}
+
+label .hamburger:after, label .hamburger:before {
+  transition: .2s ease-in-out;
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #69d2e7;
+}
+
+label .hamburger:before { top: -10px; }
+
+label .hamburger:after { bottom: -10px; }
+
+label input { display: none; }
+
+label input:checked + .menu {
+  box-shadow: 0 0 0 100vw #FFF, 0 0 0 100vh #FFF;
+  border-radius: 0;
+}
+
+label input:checked + .menu .hamburger {
+  transform: rotate(45deg);
+}
+
+label input:checked + .menu .hamburger:after {
+  transform: rotate(90deg);
+  bottom: 0;
+}
+
+label input:checked + .menu .hamburger:before {
+  transform: rotate(90deg);
+  top: 0;
+}
+
+label input:checked + .menu + ul { 
+  opacity: 1;
+  display: block; /* Add this line */
+ }
+
+label ul {
+  z-index: 200;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: .25s 0s ease-in-out;
+  display: none; /* Add this line */
+}
+
+label a {
+  margin-bottom: 1em;
+  display: block;
+  color: #000000;
+  text-decoration: none;
+  font-size: 2em;
 }

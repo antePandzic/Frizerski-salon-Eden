@@ -29,12 +29,4 @@ window.addEventListener('DOMContentLoaded', () => {
       currentCardIndex = (currentCardIndex + 1) % cards.length;
       cards[currentCardIndex].classList.add('active');
     });
-    
-    const menuContainer = document.querySelector('.menu-container');
-    const contactInfo = document.getElementById('contact-info');
-  
-    menuContainer.addEventListener('click', () => {
-      menuContainer.classList.toggle('open');
-    });
   });
-  
